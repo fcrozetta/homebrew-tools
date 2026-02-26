@@ -14,8 +14,14 @@ class Kubeforward < Formula
   end
 
   on_linux do
-    odie "kubeforward is not released for linux yet"
+  if Hardware::CPU.intel?
+    url "https://github.com/fcrozetta/kubeforward/releases/download/#{version}/kubeforward-#{version}-linux-amd64.tar.gz"
+    sha256 "<PLEASE_UPDATE_ME>"
+  elsif Hardware::CPU.arm?
+    url "https://github.com/fcrozetta/kubeforward/releases/download/#{version}/kubeforward-#{version}-linux-arm64.tar.gz"
+    sha256 "<PLEASE_UPDATE_ME>"
   end
+end
 
   def install
     bin.install "kubeforward"
