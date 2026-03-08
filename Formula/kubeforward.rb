@@ -1,13 +1,13 @@
 class Kubeforward < Formula
   desc "Port-forward Kubernetes services/pods with a friendly workflow"
   homepage "https://github.com/fcrozetta/kubeforward"
-  version "0.0.13"
+  version "0.0.14"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/fcrozetta/kubeforward/releases/download/#{version}/kubeforward-#{version}-darwin-arm64.tar.gz"
-      sha256 "3eab4cb7ae6564f335dd3881f91b25d579a72721f5534ba7719f04896f169eec"
+      sha256 "1101d4a4f76ae2a4e4b00276f2603ca1f53070217bc352fad4ac781e30cef477"
     else
       odie "kubeforward is not released for darwin-amd64 yet"
     end
@@ -16,10 +16,10 @@ class Kubeforward < Formula
   on_linux do
     if Hardware::CPU.intel?
       url "https://github.com/fcrozetta/kubeforward/releases/download/#{version}/kubeforward-#{version}-linux-amd64.tar.gz"
-      sha256 "9dca78b54b11600239282aca2650799e136545837546b92a95be5e4f88be0aea"
+      sha256 "b185363ff459509fe31e858308132621adf8a65bf430bfd67711d43e642bf67b"
     elsif Hardware::CPU.arm?
       url "https://github.com/fcrozetta/kubeforward/releases/download/#{version}/kubeforward-#{version}-linux-arm64.tar.gz"
-      sha256 "4e9c28f4cc71007f1426f39220acbff6b6b2a5f8d8a89019539e0c01d64ca1c4"
+      sha256 "601b3229f505e307da9e9178747fc75bc846bf03876580df7d8ec25bca6ae2e3"
     else
       odie "kubeforward is not released for this linux architecture yet"
     end
