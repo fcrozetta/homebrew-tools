@@ -1,8 +1,8 @@
 class NvimConfig < Formula
   desc "Personal Neovim configuration"
   homepage "https://github.com/fcrozetta/nvim-config"
-  url "https://github.com/fcrozetta/nvim-config/archive/refs/tags/0.0.7.tar.gz"
-  sha256 "be201f3594d10c6ea3b12d41bbd9d2dd096cf2536f42794f1f5e877331e0798e"
+  url "https://github.com/fcrozetta/nvim-config/archive/refs/tags/0.0.8.tar.gz"
+  sha256 "f387a30bdc1759dea54039842a954ba09d2d7f09372826de814a0addaf97038f"
   license "MIT"
 
   depends_on "neovim"
