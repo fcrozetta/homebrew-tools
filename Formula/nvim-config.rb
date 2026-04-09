@@ -1,8 +1,8 @@
 class NvimConfig < Formula
   desc "Personal Neovim configuration"
   homepage "https://github.com/fcrozetta/nvim-config"
-  url "https://github.com/fcrozetta/nvim-config/archive/refs/tags/0.0.8.tar.gz"
-  sha256 "f387a30bdc1759dea54039842a954ba09d2d7f09372826de814a0addaf97038f"
+  url "https://github.com/fcrozetta/nvim-config/archive/refs/tags/0.0.9.tar.gz"
+  sha256 "45c1d741ada169fdc3ff8278ae17f4e4f85d396c95b33bdcf4c9e60621bbebfd"
   license "MIT"
 
   depends_on "neovim"
@@ -19,9 +19,9 @@ class NvimConfig < Formula
   depends_on "python@3.12"
 
   def install
-    pkgshare.install Dir["*"], ".gitignore", ".neoconf.json"
     bin.install "setup.sh" => "nvim-config-setup"
     inreplace bin/"nvim-config-setup", /^SCRIPT_DIR=.*$/, "SCRIPT_DIR=\"#{pkgshare}\""
+    pkgshare.install Dir["*"], ".gitignore", ".neoconf.json"
   end
 
   def post_install
