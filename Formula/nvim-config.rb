@@ -1,8 +1,8 @@
 class NvimConfig < Formula
   desc "Personal Neovim configuration"
   homepage "https://github.com/fcrozetta/nvim-config"
-  url "https://github.com/fcrozetta/nvim-config/archive/refs/tags/0.0.10.tar.gz"
-  sha256 "a605514af2b41d7e4771b933d866360898946ce653a35bf6f9ea5a22ae517fe8"
+  url "https://github.com/fcrozetta/nvim-config/archive/refs/tags/0.0.11.tar.gz"
+  sha256 "dfa36598642eb959ee20d1cefb77f1950d3b6bd32b839e973fc01baada6dd791"
   license "MIT"
 
   depends_on "neovim"
@@ -20,6 +20,7 @@ class NvimConfig < Formula
 
   def install
     bin.install "setup.sh" => "nvim-config-setup"
+    bin.install "scripts/uninstall.sh" => "nvim-config-uninstall"
     inreplace bin/"nvim-config-setup", /^SCRIPT_DIR=.*$/, "SCRIPT_DIR=\"#{pkgshare}\""
     pkgshare.install Dir["*"], ".gitignore", ".neoconf.json"
   end
@@ -29,10 +30,15 @@ class NvimConfig < Formula
     system bin/"nvim-config-setup"
   end
 
+  def uninstall
+    system bin/"nvim-config-uninstall"
+  end
+
   def caveats
     <<~EOS
       Config symlinked to ~/.config/nvim
       Run 'nvim-config-setup' to re-link after upgrades.
+      Run 'nvim-config-uninstall' before 'brew uninstall' for full cleanup.
     EOS
   end
 end
