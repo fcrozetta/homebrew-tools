@@ -1,8 +1,8 @@
 class NvimConfig < Formula
   desc "Personal Neovim configuration"
   homepage "https://github.com/fcrozetta/nvim-config"
-  url "https://github.com/fcrozetta/nvim-config/archive/refs/tags/0.0.11.tar.gz"
-  sha256 "dfa36598642eb959ee20d1cefb77f1950d3b6bd32b839e973fc01baada6dd791"
+  url "https://github.com/fcrozetta/nvim-config/archive/refs/tags/0.0.12.tar.gz"
+  sha256 "bfeaace641a6900271df7aaa4b1f27fe2ad06773e8dd668d042a50e524d223cc"
   license "MIT"
 
   depends_on "neovim"
@@ -37,7 +37,6 @@ class NvimConfig < Formula
   def caveats
     <<~EOS
       Config symlinked to ~/.config/nvim
-      Run 'nvim-config-setup' to re-link after upgrades.
       Run 'nvim-config-uninstall' before 'brew uninstall' for full cleanup.
     EOS
   end
