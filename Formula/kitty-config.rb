@@ -1,15 +1,11 @@
 class KittyConfig < Formula
   desc "Personal kitty terminal configuration"
   homepage "https://github.com/fcrozetta/kitty-config"
-  url "https://github.com/fcrozetta/kitty-config/archive/refs/tags/0.0.2.tar.gz"
-  sha256 "373fd7f79f938ee50a34c147be149fada3d466e08f2b4c55f538a2ba86ea741e"
+  url "https://github.com/fcrozetta/kitty-config/archive/refs/tags/0.0.3.tar.gz"
+  sha256 "41c1a53f861b0e97a6ba1537d2c7c68f95edb798674eebd7674c058558f6b35f"
   license "MIT"
 
   depends_on :macos
-
-  on_macos do
-    depends_on cask: "font-fira-code-nerd-font"
-  end
 
   def install
     bin.install "setup.sh" => "kitty-config-setup"
