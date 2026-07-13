@@ -1,13 +1,13 @@
 class Rctx < Formula
   desc "Repo ConTeXt: repository-bounded context and claims for coding agents"
   homepage "https://github.com/fcrozetta/rctx"
-  version "0.3.0"
+  version "0.4.0"
   license "GPL-3.0-or-later"
 
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/fcrozetta/rctx/releases/download/#{version}/rctx-#{version}-darwin-arm64.tar.gz"
-      sha256 "0bf32fd8e2ead98bd3fe7060aca054233d8c8d55cde52500b87f9698aab31666"
+      sha256 "83095d666b95cf585a6b5bcb29dcd8a067de332bdd31e263d4ee4c106002035b"
     else
       odie "rctx is not released for darwin-amd64 yet"
     end
@@ -16,10 +16,10 @@ class Rctx < Formula
   on_linux do
     if Hardware::CPU.intel?
       url "https://github.com/fcrozetta/rctx/releases/download/#{version}/rctx-#{version}-linux-amd64.tar.gz"
-      sha256 "84f161c3bd06ace32eba7ad64b6bfd8c0e22be5f51844f4feda446302145f4a4"
+      sha256 "7b6c6cb528ad03fbdf0d1aecb18dd87fb32be25917091203c4a090973c9e5df5"
     elsif Hardware::CPU.arm?
       url "https://github.com/fcrozetta/rctx/releases/download/#{version}/rctx-#{version}-linux-arm64.tar.gz"
-      sha256 "b5718ac68b73a96e780c29bccc5d2b575c09ffb584a537e5e96331c0420d1165"
+      sha256 "3a2e2360ad2a54bcb237935ce69d7716f6bcefa78c6df64ba394bad8f5276814"
     else
       odie "rctx is not released for this linux architecture yet"
     end
