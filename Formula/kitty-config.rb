@@ -1,8 +1,8 @@
 class KittyConfig < Formula
   desc "Personal kitty terminal configuration"
   homepage "https://github.com/fcrozetta/kitty-config"
-  url "https://github.com/fcrozetta/kitty-config/archive/refs/tags/0.0.11.tar.gz"
-  sha256 "0f6fa6a33f8821946bb11cfd1ebad309cb27fe28415c8d3bda23343d2add9de6"
+  url "https://github.com/fcrozetta/kitty-config/archive/refs/tags/0.0.12.tar.gz"
+  sha256 "36bcef41981fca096b18d1a7ea511320ea787e82b35bdd49a231ef8d58ff102f"
   license "MIT"
 
   depends_on :macos
