@@ -1,22 +1,22 @@
 class FcJson < Formula
   desc "Inspect JSON and generate schemas, examples, and Pydantic classes"
   homepage "https://github.com/fcrozetta/fc-json"
-  version "2.0.1"
+  version "2.0.2"
   license "GPL-3.0-or-later"
 
   on_macos do
     # Universal binary (Apple Silicon + Intel) — one tarball for both arches.
     url "https://github.com/fcrozetta/fc-json/releases/download/#{version}/fc-json-#{version}-darwin-universal.tar.gz"
-    sha256 "5c44b764c14b0a5df53c429626d5798818bdb6e3d48a80053cb26665b57faba2"
+    sha256 "afcf93e00f124d4b3b6d43eda27b7800c8c615b344035a7ad89bf7e25a3622ca"
   end
 
   on_linux do
     if Hardware::CPU.intel?
       url "https://github.com/fcrozetta/fc-json/releases/download/#{version}/fc-json-#{version}-linux-amd64.tar.gz"
-      sha256 "e8fb358916d2324edc4b1c3f30c3400547c244b5fa1dd8c05ff53aae00e52471"
+      sha256 "fed99de4be97d68dd3ad4cc487f51b69b0baa539358faa78ae44f32fdedb3d1c"
     elsif Hardware::CPU.arm?
       url "https://github.com/fcrozetta/fc-json/releases/download/#{version}/fc-json-#{version}-linux-arm64.tar.gz"
-      sha256 "ff20e39b175890443593b2563ec75f98e88dc04a49a700cc2fb0555363644ab5"
+      sha256 "5de18026b8306c7adc87a9dd7bf5b36004cb58415538bc3d22c0e2a9f3034734"
     else
       odie "fc-json is not released for this linux architecture yet"
     end
